@@ -171,11 +171,18 @@ public class ValidationItemControllerV2 {
     @PostMapping("/add")
     public String addItemV4(@ModelAttribute Item item, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         
+    	// 주석을 해제하면 
+    	/*
+    	if(bindingResult.hasErrors()) {
+    		return "validation/v2/addForm";
+    	}
+    	*/
+    	
     	log.info("objectName={}", bindingResult.getObjectName());
     	log.info("target={}", bindingResult.getTarget());
     	
-    	//검증 로직
     	
+    	//검증 로직
     	
     	//ValidationUtils.rejectIfEmptyOrWhitespace(bindingResult, "itemName", "required");
     	//아래의 것과 같은 효과를 준다.
